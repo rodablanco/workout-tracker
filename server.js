@@ -16,3 +16,12 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb.net/myFirstDatabase", {
   useCreateIndex: true,
   useFindAndModify: false,
 });
+
+//routes
+//make sure route is correct
+app.use(require("./routes/api.js"))
+
+app.listen(PORT, () => {
+    console.log(`App running on port ${PORT}!`)
+})
+

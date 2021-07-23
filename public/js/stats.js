@@ -1,7 +1,7 @@
 //console.log("im connected");
 
 function calculateTotalWeight(data) {
-  const calculateTotalWeight = [];
+  const total = [];
 
   data.forEach((workout) => {
     const workoutTotal = workout.exercises.reduce((total, { type, weight }) => {
@@ -11,10 +11,10 @@ function calculateTotalWeight(data) {
       return total;
     }, 0);
 
-    calculateTotalWeight.push(workoutTotal);
+    total.push(workoutTotal);
   });
 
-  return calculateTotalWeight;
+  return total;
 }
 
 function calculateTotalDuration(data) {
@@ -24,8 +24,9 @@ function calculateTotalDuration(data) {
     const workoutTotal = workout.exercises.reduce((total, exercises) => {
       return total + exercises.duration;
     }, 0);
-    totals.push(data)
-  })
+    totals.push(workoutTotal)
+  });
+  return totals;
 }
 function populateChart(data) {
   // const durations = data.map(({ totalDuration }) => totalDuration);

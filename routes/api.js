@@ -8,18 +8,23 @@ router.post("/api/workouts", ({ body }, res) => {
 });
 
 router.get("/api/workouts", ({ body }, res) => {
-  Workout.find().then((data) => {
+  Workout.find({}).then((data) => {
     res.json(data);
   });
 });
 
+//adding exercise
 router.put("/api/workouts/:id", ({ params,body }, res) => {
-  Workout.findByIdAndUpdate(params.id, { $push: { exercises: body } }).then(
+  // Workout.findByIdAndUpdate(params.id, { $push: { exercises: body } }, { new: true })
+  Workout.findOneAndUpdate({ _id: req.params.id }, { $push: { exercises: req.body } }, { new: true })
+    .then(
       (data) => {
           console.log(data);
       res.json(data);
-    }
-  );
+      })
+    .catch(err => {
+      res.json(err);
+    });
 });
 router.get("/api/workouts/range", (req, res) => {
   Workout.find({})

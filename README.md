@@ -5,7 +5,7 @@
 ## Description
 Application that enables a user to view, create and track daily workouts. The dasboard feature displays total duration and weight of each workout
 
-## Table of Contents
+## Languages &Technologies
 * [Link](#Link)
 * [Usage](#usage)
 * [License](#license)
@@ -14,7 +14,7 @@ Application that enables a user to view, create and track daily workouts. The da
 * [Questions](#questions)
 
 ## Link
-
+https://obscure-dawn-73077.herokuapp.com/?id=60fa4c8b9bc25a0015d2ef56
 ```
 
 ## Usage

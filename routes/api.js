@@ -10,7 +10,11 @@ router.post("/api/workouts", ({ body }, res) => {
 router.get("/api/workouts", ({ body }, res) => {
   Workout.find({}).then((data) => {
     res.json(data);
-  });
+  })
+    .catch(err => {
+      console.log(err)
+    })
+  
 });
 
 //adding exercise
